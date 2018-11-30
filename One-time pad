@@ -1,0 +1,29 @@
+public class example {
+    
+      public static void main(String[] args) {
+       Scanner sc = new Scanner (System.in);
+          System.out.println("Input Text");
+          String text = sc.nextLine();
+          char[] achText= text.toCharArray();
+          char[] achKey = new char[achText.length];
+          char[] achResult = new char[achText.length];
+          char[] achDecrypt = new char[achText.length];
+      
+          int Min=97;
+          int Max=122;
+          for(int i=0;i<achText.length;i++){
+              achKey[i]=(char)(Min+(int)(random()*((Max-Min)+1)));
+              if ((achText[i]+achKey[i])>(Max+Min)) achResult[i]=(char)(achText[i]+achKey[i]-Max);
+              else achResult[i]=(char)(achText[i]+achKey[i]-Min);
+          }
+          System.out.println("Text: "+String.valueOf(achText));
+          System.out.println("Key: "+String.valueOf(achKey));
+           System.out.println("Result: "+String.valueOf(achResult));
+           
+           for(int i=0;i<achText.length;i++){
+              if(achResult[i]-achKey[i]<0) achDecrypt[i]=(char)(achResult[i]-achKey[i]+Max);
+              else  achDecrypt[i]=(char)(achResult[i]-achKey[i]+Min);
+           }
+           System.out.println("Decrypt: "+String.valueOf(achDecrypt));
+}
+}
