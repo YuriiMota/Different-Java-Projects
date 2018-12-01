@@ -1,0 +1,51 @@
+import java.util.Scanner;
+
+public class Pr1NC {
+    public static void main(String args[]){
+        Scanner n = new Scanner(System.in);
+        System.out.println("Enter a");
+        int a=n.nextInt();
+        System.out.println("Enter b");
+        int b=n.nextInt();
+        System.out.println("Enter v");
+        int c=n.nextInt();
+        int max,min,ser;
+        if ((a>b)&&(a>c)){
+             max=a;
+             if(b<c){
+                 ser=c;
+                 min=b;
+             }
+                 else{
+                 min=c;
+                 ser=b;
+                }
+             } 
+        else
+            if(b>c){
+                max=b;
+                if(a<c){
+                 ser=a;
+                 min=c;
+             }
+                 else{
+                 min=c;
+                 ser=a;
+                }
+             }
+        else {max=c;
+        if(a<b){
+                 ser=b;
+                 min=a;
+             }
+                 else{
+                 min=a;
+                 ser=b;
+                }
+        }
+        a=max;
+        b=ser;
+        c=min;
+        System.out.println(a+" "+ b+" "+c);
+            }
+    }
