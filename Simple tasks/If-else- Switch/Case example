@@ -1,0 +1,23 @@
+import java.util.Scanner;
+//Ввести номер одиниці вимірювання (1 – дециметр, 2 – кілометр, 3 – метр, 4 – міліметр, 5 – сантиметр) і довжину відрізка L.
+//Вивести відповідне значення довжини у метрах.
+
+public class Pr1Switch2 {
+    public static void main(String args[]){
+     Scanner n = new Scanner(System.in);
+      System.out.println("Введіть одиницю вимірювання 1- дециметр 2- кілометр 3- метр 4- міліметр 5- сантметр");
+      int k =n.nextInt();
+      System.out.println("Введіть довжину відрізка L");
+      int l =n.nextInt();
+      double d=0;
+      switch(k){
+          case 1: d=l/10; break;
+          case 2: d = l*1000; break;
+          case 3: d = l;break;
+          case 4: d = l/1000;break;
+          case 5: d = l/100;break;
+          default: System.out.println("Eror");
+      }
+     System.out.println(d+" м"); 
+}
+}
