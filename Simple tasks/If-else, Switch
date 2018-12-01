@@ -1,0 +1,32 @@
+//1.	Дано 3 числа  a, b , c . Визначити, яке з них дорівнює d. Якщо жодне з чисел не рівне d , то знайти {d-a,d-b,d-c}.
+import java.util.Scanner;
+
+public class Pr1abc {
+    public static void main(String args[]){
+     Scanner n = new Scanner(System.in);
+        System.out.println("Enter a");
+        int a=n.nextInt();
+        System.out.println("Enter b");
+        int b=n.nextInt();
+        System.out.println("Enter c");
+        int c=n.nextInt();
+        System.out.println("Enter d");
+        int d=n.nextInt();
+        if(a==d)System.out.println("a=d");
+        else
+             if(b==d)System.out.println("b=d");
+             else
+                  if(c==d)System.out.println("c=d");
+                  else{
+                    int m1=d-a;
+                    int m2=d-b;
+                    int m3=d-c;
+                    int max;
+                    if ((m1>m2)&&(m1>m3)) max=m1;
+                    else if (m2>m3) max=m2;
+                    else max=m3;
+                    System.out.println(max);
+                  }
+        
+}
+} 
