@@ -1,0 +1,27 @@
+import java.util.Scanner;
+import static java.lang.Math.*;
+public class Pr1PointOs {
+    public static void main(String args[]){
+        Scanner Num = new Scanner(System.in);
+        System.out.println("Введіть координати першої точки a");
+        System.out.println("Введіть x1");
+        int x1=Num.nextInt();
+        System.out.println("Введіть y1");
+        int y1=Num.nextInt();
+        System.out.println("Введіть координати другої точки b");
+        System.out.println("Введіть x2");
+        int x2=Num.nextInt();
+        System.out.println("Введіть y2");
+        int y2=Num.nextInt();
+        System.out.println("Введіть координати третьої точки c");
+        System.out.println("Введіть x3");
+        int x3=Num.nextInt();
+        System.out.println("Введіть y3");
+        int y3=Num.nextInt();
+        double d1=sqrt(pow(x1-x2,2)+pow(y1-y2,2));
+        double d2=sqrt(pow(x1-x3,2)+pow(y1-y3,2));
+        if (d1<d2) System.out.println("Точка b ближча до а");
+        else System.out.println("Точка c ближча до а");
+    }
+    
+}
