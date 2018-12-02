@@ -1,0 +1,17 @@
+//Задано натуральне число n. Обчислити: P=2/3*4/5*6/7...2n/(2n+1)  .
+import java.util.Scanner;
+public class Pr2for {
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in); 
+      
+       double P=1;
+       double e;
+        System.out.println("Enter n n");
+       double n=sc.nextDouble();
+       for(int i=1;i<=n;i++){
+           e=(double)(2*i)/(2*i+1);
+           P=P*e;
+       }
+       System.out.println(P);
+    }     
+}
