@@ -1,0 +1,46 @@
+/*Задано масив із n натуральних чисел. 
+* Утворити новий масив з елементів заданого, які закінчуються цифрою k.
+*
+*/
+import java.util.Random;
+import java.util.Scanner;
+
+
+public class Pr3Mas_k {
+    public static void main(String args[]){
+    System.out.println("Введдіть розмірність масиву");
+         Scanner sc = new Scanner(System.in);
+         Random rand = new Random();
+         int n=sc.nextInt();
+         Integer Mas[]= new Integer[n];
+         System.out.println("Введіть значення k");
+         int k=sc.nextInt();
+         int j=0;
+         for(int i=0;i<Mas.length;i++){
+             Mas[i]= rand.nextInt(100);
+             System.out.print(Mas[i]+" ");
+             if(Mas[i]% 10==k){
+                // System.out.println(Mas[i]+" ");
+              j++;
+             }
+             
+         }
+          System.out.println();
+         System.out.println("Кількість співпадінь "+j);
+    
+    
+         
+        int l=0;
+         Integer Mas2[]= new Integer[j];
+         for(int i=0;i<Mas.length;i++){
+             if(Mas[i]% 10==k){
+                 Mas2[l]=Mas[i];
+                 l++;
+             }
+         }
+         for(int i=0;i<j;i++){
+            System.out.print(Mas2[i]+" ");
+         }
+                   
+    }
+}
