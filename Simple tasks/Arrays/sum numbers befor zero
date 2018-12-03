@@ -1,0 +1,33 @@
+/*	Прочитати з клавіатури групу чисел. Знайти суму модулів тих чисел, які передують першому нульовому,
+* або усіх чисел групи, якщо нульових немає. 
+*
+*/
+
+import java.util.Scanner;
+
+public class Pr3_2 {
+    public static void main(String args[]){
+    System.out.println("Введдіть розмірність масиву");
+         Scanner sc = new Scanner(System.in);
+         int n=sc.nextInt();
+         Integer Mas[]= new Integer[n];
+         System.out.println("Введдіть елементи масиву"); 
+         for(int i=0;i<Mas.length;i++){
+             Mas[i]= sc.nextInt();
+         }
+         int Sum=0;
+         int index=0;
+         
+          for(int i=n-1;i>=0;i--){
+             if(Mas[i]==0) index=i;
+             Sum+=Mas[i];
+          }
+          int Sum2=0;
+          if(index==0) 
+              System.out.println(Sum);
+         else
+              for(int i=0;i<index;i++)
+                 Sum2+=Mas[i];
+         if(index!=0)System.out.println(Sum2); 
+    }
+}
