@@ -1,0 +1,46 @@
+/* В одновимірному масиві всі від’ємні елементи перемістити в початок масиву,
+* а інші – в кінець, зберігши при цьому порядок слідування.
+*
+*/
+
+import java.util.Scanner;
+import java.util.Random;
+
+public class Pr3_1Mas {
+    
+     public static void main(String args[]){
+         System.out.println("Введдіть розмірність масиву");
+         Scanner sc = new Scanner(System.in);
+         Random rand = new Random();
+         int n=sc.nextInt();
+         Integer Mas[]= new Integer[n];
+         
+         for(int i=0;i<Mas.length;i++){
+             Mas[i]= rand.nextInt(21);
+             System.out.print(Mas[i]+" ");
+         }
+         //пошук максимального і мімімального значення
+         int max = Mas[0];
+         int min=Mas[0];
+         System.out.println();
+         for(int i=0;i<Mas.length;i++){
+           if (Mas[i]<min) min=Mas[i];
+           if (Mas[i]>max) max=Mas[i];  
+         }
+         int j;
+         //в порядку зростання всі цілі числа з інтервалу  , які входять у даний масив
+         
+         for( j=min+1;j<max;j++){
+             boolean b= true;
+             for(int i=0;i<Mas.length;i++)
+             if(Mas[i]==j){ 
+                b=false; 
+                break;
+             }
+             if (b) System.out.print(j+" ");
+          }
+          System.out.println();
+          System.out.println("Max- "+max);
+          System.out.println("Min- "+ min);
+     }
+}
