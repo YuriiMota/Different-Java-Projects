@@ -1,0 +1,38 @@
+/*Задано масив цілих чисел. Знайти мінімальний елемент m і максимальний елемент M .
+*Вивести в порядку зростання всі цілі числа з інтервалу (m,M), які входять у даний масив.
+*
+*/
+import java.util.Scanner;
+import java.util.Random;
+
+public class Pr3_1Mas {
+    
+     public static void main(String args[]){
+         System.out.println("Введдіть розмірність масиву");
+         Scanner sc = new Scanner(System.in); 
+         Random rand = new Random();
+         int n=sc.nextInt(); //задаємо розмір масиву
+         Integer Mas[]= new Integer[n]; //створюєм масив
+         //генеруємо і виводимо випадкові числа в масиві від 0 до 49
+         for(int i=0;i<Mas.length;i++){
+             Mas[i]= rand.nextInt(50);
+             System.out.print(Mas[i]+" ");
+         }
+         //пошук максимального і мімімального значення
+         int max = Mas[0];
+         int min=Mas[0];
+         System.out.println();
+         for(int i=0;i<Mas.length;i++){
+           if (Mas[i]<min) min=Mas[i];
+             if (Mas[i]>max) max=Mas[i];  
+         }
+         
+         //в порядку зростання всі цілі числа з інтервалу  , які входять у даний масив
+         for(int j=min+1;j<max;j++)
+             System.out.print(j+" ");
+
+         System.out.println();
+        System.out.println("Max- "+max); //вивід макс
+        System.out.println("Min- "+ min); //вивід мінім
+     }
+}
